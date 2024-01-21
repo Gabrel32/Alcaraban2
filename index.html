@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcaraban 2</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./normalize.css" />
+</head>
+    <div class="contendor">
+        <div class="contendorInputs">
+            
+        </div>
+        <div class="contendorLexico">
+            <div class="contendorTitulo">
+                <h3 class="titulo">
+                    Parentesis y Prioridad
+                </h3>
+            </div>
+            <div class="cotenedorLexico">
+                <h2 class="lexicoH2">
+                    lexico
+                </h2>
+            </div>
+            <div class="contenedorParrafo">
+                <div class="parrafo">
+                    <span class="centro">Expresiones con parentesis:</span>
+                    <div class="contendorEjemplo">
+                        <p>
+                            3 (x + 2)                         
+                        </p>
+                        <p>
+                            3(x + 2) + x - (7 - 2 (x / y))
+                        </p>
+                    </div>
+                    <span class="centro">Expresiones con parentesis:</span>
+                    <div class="contendorEjemplo">
+                        <p>
+                            7 - 2 + 3 - 6 / 2                     
+                        </p>
+                        <p>
+                            2 . 5 + 8
+                        </p>
+                    </div>
+                </div>
+                <p>Los parametros sirven para indicar cuales operaciones deben ser realizadas primero</p>
+                </div>
+            </div>
+        </div>
+        <div class="contenedorTablas">
+            <div class="cotenedorLexico2">
+                <h2 class="lexicoH2">
+                    Clase
+                </h2>
+            </div>
+        <div class="contenedorTabla">
+            <table id="tabla">
+                <thead id="tHead">
+                    <tr class="trTabla">
+                        <th>Expresiones</th>
+                        <th>Cuantas Expresiones Hay?</th>
+                        <th>Hay Parentesis?</th>
+                    </tr>
+                </thead>
+                <tbody class="tBody"> 
+                    <!-- aqui se inserta la primera tabla -->
+                </tbody>
+            </table>
+            <div class="secctionBtn">
+                <button class="btnTable" type="button">verificar</button>
+            </div>
+        </div>
+        <div class="cotenedorLexico2">
+            <h2 class="lexicoH2">
+                Tarea
+            </h2>
+        </div>
+        <div class="contenedorTabla2">
+            <table id="tabla">
+                <thead id="tHead">
+                    <tr class="trTabla">
+                        <th>Expresiones</th>
+                        <th>Cuantas Expresiones Hay?</th>
+                        <th>Hay Parentesis?</th>
+                    </tr>
+                </thead>
+                <tbody class="tBody"> 
+                    <!-- aqui se inserta la segunda tabla -->
+                </tbody>
+            </table>
+            <div class="secctionBtn">
+                <button class="btnTable" type="button">verificar</button>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    <div class="contendorLexico">
+        <div class="contendorTitulo">
+            <h3 class="titulo">
+                Cuando hay Parentesis
+            </h3>
+        </div>
+        <div class="cotenedorLexico">
+            <h2 class="lexicoH2">
+                lexico
+            </h2>
+        </div>
+        <div class="contenedorParrafo">
+            <div class="parrafo ">
+                    <p><i>Regla de parentesis</i>: En una expresion <i>Dos opreaciones con parentesis</i> se hace primero la operacion que esta dentro del parentesis</p>
+            </div>
+            <div class="padre">
+                <div class="hijo">
+                    ( 7 - 2) . 3 = 5 . 3 = 15
+                </div>
+                <div class="hijo">
+                     7 - (2 . 3) = 7 - 6 = 1
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <template id="templadeEjercio">
+        <div class="contendorEjercio">
+            <div class="spanPrincipal">
+                <span class="span1">0</span>
+                <span class="span2"></span>
+                <span class="span3"></span>
+                <span class="span4"></span>
+                <span class="span5"></span>
+                <span class="span6"></span>
+                <span class="span7"></span>
+                <span class="span8"></span>
+                <span class="span9"></span>
+                <div class="contendorPuntos"><div class="o"></div></div>
+                <div class="contendorPuntos"><div class="o"></div></div>
+                <div class="contendorPuntos"><div class="o"></div></div>
+                <div class="contendorPuntos"><div class="o"></div></div>
+                <div class="contendorPuntos"><div class="o"></div></div>
+                <div class="contendorPuntos"><div class="o"></div></div>
+                <div class="contendorPuntos"><div class="o"></div></div>
+                <div class="contendorPuntos"><div class="o"></div></div>
+                <div class="contendorPuntos"><div class="o"></div></div>
+            </div>
+            <div class="spanSecundario"><p class="b" >b = 12</p></div>
+            <div class="spanTerceario"><input placeholder="valor de 'a' " type="number" name="inputValue" class="inputValue"></div>
+            <div class="contendorButton">
+                <button type="button" class="btnV">verificar</button>
+            </div>
+        </div>
+    </template>
+    
+    <template id="tmpTabla">
+        <tr class="trTabla">
+            <td class="tdExpresion">
+                7-2+3x6
+            </td>
+            <td class="tdInput">
+                <label>
+                    sumas
+                </label>
+                <input value="1" type="checkbox" class="InputCheck">
+                <label>
+                    restas
+                </label>
+                <input value="2" type="checkbox"  class="InputCheck">
+                <label >
+                    multiplicacion
+                </label>
+                <input value="3" type="checkbox"  class="InputCheck">
+                <label>
+                    Division
+                </label>
+                <input value="4" type="checkbox"  class="InputCheck">
+            </td>
+            <td class="tdParentesis">
+                <label >si</label>
+                <input value="si" type="checkbox" class="InputCheckPare">
+                <label >no</label>
+                <input value="no" type="checkbox" class="InputCheckPare">
+            </td>  
+        </tr>
+    </template>
+    <script  src="./scripts.js"></script>
+</body>
+</html>

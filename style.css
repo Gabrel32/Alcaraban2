@@ -1,0 +1,237 @@
+:root{
+    ---colorBorder:#696262;
+    ---White:#ffffff;
+    ---Black:#000
+}
+
+.contendor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px 0;
+    gap: 20px;
+}
+.contendorInputs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.contendorEjercio{
+    display: flex;
+    border: 2px solid #696262;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+    width: 80%;
+    
+    @media (min-width:786px){
+        width: 65%;
+      }
+    
+}
+
+.spanPrincipal{
+    width: 60%;
+    display: grid;
+    grid-template-areas:"punto1 punto2 punto3 punto4 punto5 punto6 punto7 punto8 punto9" 
+                        "punto10 punto11 punto12 punto13 punto14 punto15 punto16 punto17 punto18";
+    grid-template-rows: 1 auto;
+    height: 100%;
+    margin-left: 4%;
+    border-right: 2px solid var(---colorBorder);
+
+    
+}
+.spanSecundario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid var(---colorBorder);
+    width: 20%;
+    height: 100%;
+}
+.spanTerceario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    border-right: 2px solid var(---colorBorder);
+
+}
+.contendorPuntos{
+    grid-area:punto10 punto11 punto12 punto13 punto15 punto16 punto17 punto18;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-top:  2px solid var(---colorBorder);
+
+    &:last-child{
+        border-top: 2px solid var(---White);
+    }
+}
+span{
+    grid-area:punto1 punto2 punto3 punto4 punto5 punto6 punto7 punto8 punto9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    }
+
+.o{
+    position: relative;
+    top: -22%;
+    background-color: var(---Black);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    
+}
+.inputValue{
+    height: 90%;
+    width: 100%;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    &:focus{
+        outline: none;
+    }
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.contendorButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.baneer{
+    display: none;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(---Black);
+    text-transform: capitalize;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.btnV{
+    height: 100%;
+}
+
+/* estilos dela tabla */
+
+table {
+    /* border-collapse: collapse; */
+    border-spacing: 0.1px;
+    border: 1px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+th, td {
+    border: 1px solid var(---Black);
+    padding: 8px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+.secctionBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.contenedorTablas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+.contenedorTabla .contenedorTabla2{
+    padding: 5px;
+}
+.contendorLexico{
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    
+}
+.contendorTitulo{
+    width: 55%;
+    height: 40px;
+    text-align:right;
+    /* display: flex;
+    align-items: center; */
+}
+.cotenedorLexico{
+    width: 40%;
+    text-align: right;
+    
+}
+.cotenedorLexico2{
+    width: 65%;
+    text-align: right;
+    height: 50px;
+    
+}
+.contenedorParrafo{
+    margin: 0 20%;
+}
+.centro{
+    margin: 10px 0;
+}
+.contendorEjemplo{
+    display: flex;
+    gap: 5rem;
+}
+.lexicoH2{
+    font-size: 1.8rem;
+    color: var(---colorBorder);
+    text-transform: uppercase;
+}
+/* .contenedorParrafo2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+i{
+    font-weight: bold;
+
+}
+.padre{
+    display: flex;
+    border: 2px solid var(---colorBorder);
+    margin-bottom: 2rem;
+    height: 40px;
+}
+.hijo{
+    display: flex;
+    width: 50%;
+    outline: 1px solid var(---colorBorder);
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
