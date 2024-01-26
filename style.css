@@ -149,8 +149,23 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-border-radius:10px;
     width: 40%;
     @media (min-width:786px){
-        width: 65%;
+        width: 25%;
       }
+    
+}
+.contendorButtonTabla{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 4px;
+    padding: 5px;
+    border: 2px solid var(--colorBorder);
+    border-radius: 10px;
+    -webkit-border-radius:10px;
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;
+
 }
 .styleBtn {
     box-shadow: 0 3px var(--keyColor-sb);
@@ -168,21 +183,21 @@ input[type="number"]::-webkit-outer-spin-button {
     box-shadow: 0 2px var(--keyColor-sb);
     transform: translateY(2px);
   }
-.btnV{
+.btnV ,.btnTableV{
     height: 100%;
     background-color:var(--primaryColor-bg);
 }
-.btnV::after {
+.btnV::after, .btnTableV::after {
     color: var(--checkColor);
     content: " ✓";
     font-weight: bolder;
     font-size: 26px;
   }
-.btnR{
+.btnR ,.btnTableR{
     height: 100%;
     background-color: var(--keyColor-sb);
 }
-.btnR::after {
+.btnR::after ,.btnTableR::after {
     color: var(--resetColor);
     content: "\021bb";
     font-weight: bolder;
@@ -232,7 +247,11 @@ th, td {
     width: 100%;
 }
 .contenedorTabla .contenedorTabla2{
-    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
 .contendorLexico{
     width: 100%;

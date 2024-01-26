@@ -24,6 +24,9 @@ class Ejervar {
                 this.inputValues.forEach(e=>{
                     this.verificar(e);
                 })
+            }else if (event.target.classList.contains("btnR")) {
+                    this.limpiar(this.inputValues);
+            
             }
           });
         
@@ -61,10 +64,10 @@ class Ejervar {
             }
         })
     }
-    reset(e){
-        setTimeout(() => {
-            e.style.outline = ""
-        }, 1500);
+    limpiar(a){
+        a.forEach(e=>{
+            e.value = ""
+        })
     }
 
 
@@ -91,9 +94,11 @@ class Tbody {
         this.fragment = document.createDocumentFragment()
         this.clone = this.templade.content.cloneNode(true)
         this.tBody = this.clone.querySelector(".tBody")
-        this.btnTable = this.clone.querySelector(".btnTable")  
+        this.btnTable = this.clone.querySelector(".btnTableV")
+        this.btnTableR = this.clone.querySelector(".btnTableR")   
         this.fragment.appendChild(this.clone)
         this.contenedorTabla.appendChild(this.fragment)
+
         
         
     }
@@ -116,18 +121,34 @@ class Tbody {
                 })
             })
         })
-        // this.InputCheckPare.forEach(e=>{
-        //     e.dataset.solucion2 = solucion2
-        //     e.addEventListener("change",()=>{
-        //         this.check(e,this.InputCheckPare,1)
+        // this.btnTable.addEventListener("click",()=>{
+        //     this.contadores = []
+        //     this.trS.forEach(e=>{                
+        //         for (let i = 0; i < this.contadores.length; i++) {
+        //         if (this.contadores[i] === solucion1[i]) {
+        //             // this.verificar(e,solucion1).style.outline = "2px solid red"
+        //             }
+                    
+        //         }
         //     })
-        // })
-        this.btnTable.addEventListener("click",()=>{
-            this.trS.forEach(e=>{
-                this.verificar(e,solucion1)
-            })
             
-        })
+        //         // a.forEach(e=>{
+        //         // })
+        //         // this.verificar2(e,solucion2
+            
+        // })
+        this.btnTableR.addEventListener("click",()=>{
+            this.trS.forEach(e=>{
+                this.inputs = e.querySelectorAll(".InputCheck")
+                this.limpiar(this.inputs)      
+            })
+            this.trS.forEach(e=>{
+                this.inputsPare =e.querySelectorAll(".InputCheckPare")
+                this.limpiar(this.inputsPare)      
+
+            })
+        
+    })
     }
     crear(expresion,solucion1,solucion2){
         // creando tr 
@@ -229,83 +250,43 @@ class Tbody {
     }
     verificar(e,solucion){
         let inputs = e.querySelectorAll(".InputCheck")
-        let contador = 0
-
-        // solucion.forEach(a=>{
-        //     inputs.forEach(e=>{
-        //         if (e.checked && parseInt(e.value) === a) {
-        //             console.log("entro");
-        //         }
-        //     })
-        // })
-
-        solucion.forEach(e=>{
-            
-        })
-        
-        for (let i = 0; i < inputs.length; i++) {
-                if (inputs[i].checked && parseInt(inputs[i].value) === solucion[i]) {
-                    contador++
-                    inputs[i].style.outline = "#fff"
-
-                } 
-                console.log(inputs[i].value === solucion[i]);
-                // if () {
-                //     console.log("logrado");
-
-                // }                   
-            }
-
+        inputs.forEach(a=>{
+            solucion.forEach(e=>{
+                // for (let i = 0; i < inputs.length; i++) {
+                    if ( a.checked && parseInt(a.value) === e) {        
+                        this.contadores.push(e)
+                        return a
+                        } 
+                    // }
+                })
+            })   
     
         
-        
-        // (input=>{
-        //     if (!input.checked) {
-        //         console.log(!input.checked);
-        //          input.parentElement.style.outline = "2px solid #e17055"
-        //         }else {
-        //      }
-        //      if (contador === solucion.length) {
-        //          // this.reset(input)
-        //          input.parentElement.style.outline = "2px solid #797c"
-        //      }else if (contador > solucion.length || contador < solucion.length){
-        //         //  this.reset(e)
-        //         input.parentElement.style.outline = "2px solid #e17055"
-        //     }
-        //      else{
-        //          input.parentElement.style.outline = "2px solid #e17055"
-        //          // this.reset(input)
-        //      }
-        // })
-                // for (let i = 0; i < e.dataset.solucion1.split(",").length; i++) {
-                //     if (e.checked && parseInt(e.value) === parseInt(e.dataset.solucion1.split(",")[i])) {
-                //         this.contador++
-                //     }                    
-                // }
-        
     }
-    verificar2(inputs){
-        inputs.forEach(e=>{
-                if (e.checked && e.value === e.dataset.solucion2) {
-                    e.parentElement.style.outline = "2px solid #797c"
-                    this.reset(e)
-                }else if(e.checked && e.value !== e.dataset.solucion2){
-                    e.parentElement.style.outline = "2px solid #e17055"
-                    this.reset(e)
-                }else if(!e.checked && e.value === e.dataset.solucion2){
-                    e.parentElement.style.outline = "2px solid #e17055"
-                    this.reset(e)
-                }
+    verificar2(e,solucion){
+        let inputs = e.querySelectorAll(".InputCheckPare")
+        let contador = 0
+        for (let i = 0; i < inputs.length; i++) {
+            if ( inputs[i].checked && inputs[i].value === solucion) {
+                this.contador++
+                inputs[i].parentElement.style.outline = " 2px solid #797c"
+            }
+            if (this.contador === 1) {
+            }else{
+                inputs[i].parentElement.style.outline = " 2px solid #e17055"
+
+            }                 
+        }      
+        
+        }
+        limpiar(a){
+            a.forEach(e=>{
+                e.checked = false
             })
-    }
-    reset(e){
-        setTimeout(() => {
-            this.contador = 0
-            e.parentElement.style.outline = ""
-        }, 1500);
+        }
     }
 
-}
+
 
 // la funcion recibe 4 
 // 1) la clase del contenedor donde se va a insertar
@@ -315,19 +296,18 @@ class Tbody {
 
 const table = new Tbody("contenedorTabla")
 table.crear("x + 2 - 4",[1,2],"no")
-// const table2 = new Tbody("contenedorTabla","2 . (5 + 8)",[4,3,2,1],"si")
-// const table3 = new Tbody("contenedorTabla","x / (2 + 3)",[4,1],"si")
-// const table4 = new Tbody("contenedorTabla","7 - 2 (x / y)",[2,4],"si")
-// const table5 = new Tbody("contenedorTabla","(7 - 2(x / y )+ 3)",[1,2,4],"si")
+table.crear("2 . (5 + 8)",[2,1],"si")
+table.crear("x / (2 + 3)",[4,1],"si")
+table.crear("7 - 2 (x / y)",[2,4],"si")
+table.crear("(7 - 2(x / y )+ 3)",[1,2,4],"si")
 
 // // segunda tabla
 const tableSecond = new Tbody("contenedorTabla2")
 tableSecond.crear("7 - 2 + 3 - 6",[1,2],"no")
 tableSecond.crear("7 -(2 + 3 - 6)",[1,2],"si")
-// const tableSecond2 = new Tbody("contenedorTabla2",)
-// const tableSecond3 = new Tbody("contenedorTabla2","7 / ((2 + 8) - 6)",[1,2,4],"si")
-// const tableSecond4 = new Tbody("contenedorTabla2","(7 + x ) / (8 - 6)",[1,2,4],"si")
-// const tableSecond5 = new Tbody("contenedorTabla2","7 + (x /(8 - 6))",[1,2,4],"si")
-// const tableSecond6 = new Tbody("contenedorTabla2","3 . 45 - (30 - 15)",[1,2,3],"si")
+tableSecond.crear("7 / ((2 + 8) - 6)",[1,2,4],"si")
+tableSecond.crear("(7 + x ) / (8 - 6)",[1,2,4],"si")
+tableSecond.crear("7 + (x /(8 - 6))",[1,2,4],"si")
+tableSecond.crear("3 . 45 - (30 - 15)",[1,2,3],"si")
 
 // // definicion del objeto parrafo
